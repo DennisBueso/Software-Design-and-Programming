@@ -38,4 +38,9 @@ class WordCounterTest extends FlatSpec with Matchers {
     val wordCount = WordCounter.countWords("testing, 1, 2 testing")
     wordCount should be(Map("testing" -> 2, "1" -> 1, "2" -> 1))
   }
+
+  it should "disregard case when counting lists of words" in {
+    val wordCount = WordCounter.countWords("go Go GO Stop stop")
+    wordCount should be(Map("go" -> 3, "stop" -> 2))
+  }
 }
