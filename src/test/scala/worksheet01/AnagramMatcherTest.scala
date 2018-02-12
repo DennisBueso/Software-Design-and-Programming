@@ -13,4 +13,9 @@ class AnagramMatcherTest extends FlatSpec with Matchers {
     val anagramMatch = AnagramMatcher.matchWord(Set("tan", "stand", "at"), "ant")
     anagramMatch should be(Set("tan"))
   }
+
+  it should "not detect false positives" in {
+    val anagramMatch = AnagramMatcher.matchWord(Set("eagle"), "galea")
+    anagramMatch should be(Set.empty)
+  }
 }
