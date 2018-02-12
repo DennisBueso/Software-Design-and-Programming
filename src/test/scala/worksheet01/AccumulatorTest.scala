@@ -4,7 +4,7 @@ import org.scalatest.{FlatSpec, Matchers}
 
 class AccumulatorTest extends FlatSpec with Matchers {
 
-  "An accumulator" can "accept an empty List" in {
+  "An Accumulator" can "accept an empty List" in {
     val accumulation = Accumulator.accumulate[Int, Int](List.empty, x => x * x)
     accumulation should be(List.empty)
   }
