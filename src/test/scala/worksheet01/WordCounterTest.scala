@@ -50,7 +50,7 @@ class WordCounterTest extends FlatSpec with Matchers {
   }
 
   it should "allow quotations in lists of words" in {
-    val wordCount = WordCounter.countWords("Joe can't tell between 'large' and large.")
+    val wordCount = WordCounter.countWords("Joe can't tell between \"large\" and large.")
     wordCount should be(Map("joe" -> 1, "can't" -> 1, "tell" -> 1, "between" -> 1, "large" -> 2,
       "and" -> 1))
   }
