@@ -3,7 +3,7 @@ package worksheet01
 object HexadecimalConverter {
 
   def hexToInt(hexInput: String): Int = {
-    hexInput match {
+    hexInput.toLowerCase match {
       case hexString: String if hexString.forall(isValidChar) => hexString.foldLeft(0)((acc, char)
       => acc * 16 + toHexValue(char))
       case _ => 0
