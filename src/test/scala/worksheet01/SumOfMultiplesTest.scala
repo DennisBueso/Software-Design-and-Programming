@@ -13,4 +13,9 @@ class SumOfMultiplesTest extends FlatSpec with Matchers {
     val multiplesSum = SumOfMultiples.sum(Set(3, 5), 4)
     multiplesSum should be(3)
   }
+
+  it should "sum multiples of 3 up to 7" in {
+    val multiplesSum = SumOfMultiples.sum(Set(3), 7)
+    multiplesSum should be(9)
+  }
 }
