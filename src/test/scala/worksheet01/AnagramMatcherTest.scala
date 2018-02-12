@@ -74,4 +74,19 @@ class AnagramMatcherTest extends FlatSpec with Matchers {
     val anagramMatch = AnagramMatcher.matchWord(Set("Banana"), "banana")
     anagramMatch should be(Set.empty)
   }
+
+  it should "not detect an anagram if the original word is repeated" in {
+    val anagramMatch = AnagramMatcher.matchWord(Set("go", "Go", "GO"), "go")
+    anagramMatch should be(Set.empty)
+  }
+
+  it should "ensure that anagrams must use all letters exactly once" in {
+    val anagramMatch = AnagramMatcher.matchWord(Set("patter"), "tapper")
+    anagramMatch should be(Set.empty)
+  }
+
+  it should "not detect an identical uppercased word as an anagram" in {
+    val anagramMatch = AnagramMatcher.matchWord(Set("Banana"), "BANANA")
+    anagramMatch should be(Set.empty)
+  }
 }
