@@ -30,7 +30,7 @@ class WordCounterTest extends FlatSpec with Matchers {
   }
 
   it should "ignore punctuation in lists of words" in {
-    val wordCount = WordCounter.countWords("car: carpet as java: javascript!!&@\$%^&")
+    val wordCount = WordCounter.countWords("car: carpet as java: javascript!!&@$%^&")
     wordCount should be(Map("car" -> 1, "carpet" -> 1, "as" -> 1, "java" -> 1, "javascript" -> 1))
   }
 
@@ -47,5 +47,11 @@ class WordCounterTest extends FlatSpec with Matchers {
   it should "allow apostrophes in lists of words" in {
     val wordCount = WordCounter.countWords("First: don't laugh. Then: don't cry.")
     wordCount should be(Map("first" -> 1, "don't" -> 2, "laugh" -> 1, "then" -> 1, "cry" -> 1))
+  }
+
+  it should "allow quotations in lists of words" in {
+    val wordCount = WordCounter.countWords("Joe can't tell between 'large' and large.")
+    wordCount should be(Map("joe" -> 1, "can't" -> 1, "tell" -> 1, "between" -> 1, "large" -> 2,
+      "and" -> 1))
   }
 }
