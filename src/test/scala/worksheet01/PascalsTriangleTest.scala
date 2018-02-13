@@ -11,4 +11,8 @@ class PascalsTriangleTest extends FlatSpec with Matchers {
   it should "compute a triangle with a single row" in {
     PascalsTriangle.rows(1) should be(List(List(1)))
   }
+
+  it should "compute a triangle with a two rows" in {
+    PascalsTriangle.rows(2) should be(List(List(1), List(1, 1)))
+  }
 }
