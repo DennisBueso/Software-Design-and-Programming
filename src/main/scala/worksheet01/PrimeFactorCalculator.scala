@@ -2,9 +2,9 @@ package worksheet01
 
 object PrimeFactorCalculator {
 
-  def primeFactors(input: Int): List[Int] = {
+  def primeFactors(input: Long): List[Long] = {
 
-    def calculate(remainder: Int, divisor: Int = 2): List[Int] = {
+    def calculate(remainder: Long, divisor: Long = 2): List[Long] = {
       if (remainder < 2) {
         List.empty
       } else {
