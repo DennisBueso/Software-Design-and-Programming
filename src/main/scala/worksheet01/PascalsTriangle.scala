@@ -2,10 +2,11 @@ package worksheet01
 
 object PascalsTriangle {
 
-  def rows(rows: Int): List[Any] = {
-    rows match {
-      case 0 => List.empty
-      case _ => List(List(rows))
-    }
+  def rows(size: Int): List[List[Int]] = {
+    (1 to size).map(buildRow).toList
+  }
+
+  def buildRow(row:Int): List[Int] = {
+    (1 until row).scan(1){(acc, column)=>acc*(row-column)/column}.toList
   }
 }
