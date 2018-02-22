@@ -1,8 +1,8 @@
 package worksheet01
 
 class Deque[T] {
-  private var default: T = _
   private val sentinel = Node(default, null, null)
+  private var default: T = _
   sentinel.prev = sentinel
   sentinel.next = sentinel
 
@@ -19,8 +19,9 @@ class Deque[T] {
     element
   }
 
-  def shift():Unit={}
-  def unshift():Unit={}
+  def shift(): Unit = {}
+
+  def unshift(): Unit = {}
 
   private case class Node(value: T, var prev: Node, var next: Node)
 
