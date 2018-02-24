@@ -1,4 +1,4 @@
-package worksheet01
+package worksheets.worksheet01
 
 import org.scalatest.{FlatSpec, Matchers}
 

@@ -1,4 +1,4 @@
-package worksheet01
+package worksheets.worksheet01
 
 class Deque[T] {
   private val sentinel = Node(default, null, null)

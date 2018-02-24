@@ -1,4 +1,4 @@
-package worksheet01
+package worksheets.worksheet01
 
 object PascalsTriangle {
 
