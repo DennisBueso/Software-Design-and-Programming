@@ -5,11 +5,12 @@ package courseworks.sml
  */
 class Translator(fileName: String) {
   private final val ADD = "add"
+  private final val SUB = "sub"
+  private final val MUL = "mul"
+  private final val DIV = "div"
+  private final val OUT = "out"
   private final val LIN = "lin"
   private final val BNZ = "bnz"
-  private final val MUL = "mul"
-  private final val SUB = "sub"
-  private final val OUT = "out"
 
   /**
     * translate the small program in the file into lab (the labels) and prog (the program)
@@ -26,12 +27,14 @@ class Translator(fileName: String) {
         fields(1) match {
           case ADD =>
             program = program :+ AddInstruction(fields(0), fields(2).toInt, fields(3).toInt, fields(4).toInt)
-          case LIN =>
-            program = program :+ LinInstruction(fields(0), fields(2).toInt, fields(3).toInt)
-          case OUT =>
-            program = program :+ OutInstruction(fields(0), fields(2).toInt)
+          case SUB =>
+            program = program :+ SubInstruction(fields(0), fields(2).toInt, fields(3).toInt, fields(4).toInt)
           case MUL =>
             program = program :+ MulInstruction(fields(0), fields(2).toInt, fields(3).toInt, fields(4).toInt)
+          case OUT =>
+            program = program :+ OutInstruction(fields(0), fields(2).toInt)
+          case LIN =>
+            program = program :+ LinInstruction(fields(0), fields(2).toInt, fields(3).toInt)
           case x: Any =>
             println(s"Unknown instruction $x")
         }
