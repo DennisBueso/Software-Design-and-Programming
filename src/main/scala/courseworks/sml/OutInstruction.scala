@@ -4,7 +4,7 @@ case class OutInstruction(label: String, opcode: String, register: Int) extends 
 
   override def execute(m: Machine): Unit = println(m.regs(register))
 
-  override def toString: String = super.toString + " register " + register
+  override def toString: String = super.toString + " register " + register + "\n"
 }
 
 object OutInstruction {
