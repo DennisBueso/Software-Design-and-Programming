@@ -1,6 +1,6 @@
 package courseworks.sml
 
-class AddInstruction(label: String, op: String, val result: Int, val op1: Int, val op2: Int)
+case class AddInstruction(label: String, op: String, result: Int, op1: Int, op2: Int)
   extends Instruction(label, op) {
 
   override def execute(m: Machine) {
@@ -10,7 +10,7 @@ class AddInstruction(label: String, op: String, val result: Int, val op1: Int, v
   }
 
   override def toString: String = {
-    super.toString + " " + op1 + " + " + op2 + " to " + result + "\n"
+    super.toString + " register " + op1 + " + register " + op2 + " to register " + result + "\n"
   }
 }
 
