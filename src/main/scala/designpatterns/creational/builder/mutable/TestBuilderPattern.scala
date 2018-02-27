@@ -1,4 +1,4 @@
-package designpatterns.creational.builder
+package designpatterns.creational.builder.mutable
 
 object TestBuilderPattern {
   def main(args: Array[String]) {

@@ -1,4 +1,4 @@
-package designpatterns.creational.builder
+package designpatterns.creational.builder.mutable
 
 case class Car(var carType: String) {
   private var bodyStyle: String = _

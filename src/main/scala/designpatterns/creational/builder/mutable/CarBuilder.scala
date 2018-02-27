@@ -1,4 +1,4 @@
-package designpatterns.creational.builder
+package designpatterns.creational.builder.mutable
 
 trait CarBuilder {
   def buildBodyStyle()
