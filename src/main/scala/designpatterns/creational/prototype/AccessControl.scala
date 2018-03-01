@@ -1,9 +1,5 @@
 package designpatterns.creational.prototype
 
-class AccessControl(
-                     val controlLevel: String,
-                     var access: String
-                   ) extends Prototype {
-
-  override def cloneIt(): AccessControl = ???
+case class AccessControl(controlLevel: String, var access: String) {
+  override def toString: String = s"Access Control Level: $controlLevel, Access: $access"
 }

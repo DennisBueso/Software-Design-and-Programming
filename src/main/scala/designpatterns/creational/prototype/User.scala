@@ -1,10 +1,5 @@
 package designpatterns.creational.prototype
 
-class User(
-            var userName: String,
-            var level: String,
-            var accessControl: AccessControl
-          ) {
-
-  override def toString: String = ???
+case class User(userName: String, level: String, accessControl: AccessControl) {
+  override def toString: String = s"Name: $userName, Level: $level, " + accessControl.toString
 }
