@@ -1,11 +1,7 @@
 package designpatterns.structural.decorator
 
 class SimplyNonVegPizza extends Pizza {
-  def getDesc: String = {
-    null
-  }
+  override def getDesc: String = "SimplyNonVegPizza (350)"
 
-  def getPrice: Double = {
-    0
-  }
+  override def getPrice: Double = 350
 }

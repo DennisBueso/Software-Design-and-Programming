@@ -1,11 +1,7 @@
 package designpatterns.structural.decorator
 
-class RomaTomatoes(val pizza: Pizza) extends Pizza {
-  def getDesc: String = {
-    null
-  }
+class RomaTomatoes(pizza: Pizza) extends PizzaDecorator(pizza) {
+  override def getDesc: String = super.getDesc + "Roma Tomatoes (5.20)"
 
-  def getPrice: Double = {
-    0
-  }
+  override def getPrice: Double = super.getPrice + 5.20
 }
