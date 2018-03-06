@@ -1,10 +1,21 @@
 package designpatterns.structural.facade
 
-// TODO
-
 case class ScheduleServerFacade(scheduleServer: ScheduleServer) {
-  def stopServer(): Unit = ???
+  def startServer(): Unit = {
+    scheduleServer.startBooting()
+    scheduleServer.readSystemConfigFile()
+    scheduleServer.init()
+    scheduleServer.initializeContext()
+    scheduleServer.initializeListeners()
+    scheduleServer.createSystemObjects()
+  }
 
-  def startServer = ???
-
+  def stopServer(): Unit = {
+    scheduleServer.releaseProcesses()
+    scheduleServer.destroy()
+    scheduleServer.destroySystemObjects()
+    scheduleServer.destroyListeners()
+    scheduleServer.destroyContext()
+    scheduleServer.shutdown()
+  }
 }
