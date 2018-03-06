@@ -18,6 +18,7 @@ object TestDecoratorPattern {
     pizza = new Meat(pizza)
     // print(pizza)
     pizza = new Cheese(pizza)
+    pizza = new Cheese(pizza)
     // print(pizza)
     pizza = new Ham(pizza)
     print(pizza)
