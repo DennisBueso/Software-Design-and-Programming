@@ -1,9 +1,7 @@
 package designpatterns.structural.bridge
 
 case class GearLocking(s: String) extends Product {
-  // TODO
+  override def produce(): Unit = println(s"Producing $productName")
 
-  override def productName: String = ???
-
-  override def produce(): Unit = ???
+  override def productName: String = s
 }

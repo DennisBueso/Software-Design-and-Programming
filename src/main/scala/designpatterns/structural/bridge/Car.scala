@@ -1,10 +1,12 @@
 package designpatterns.structural.bridge
 
 abstract class Car(product: Product, carType: String) {
+  def assemble(): Unit = {
+    println(s"Modifying product ${product.productName} according to $carType")
+    println(s"Assembling ${product.productName} for $carType")
+  }
 
-  def assemble()
+  def produceProduct(): Unit = product.produce()
 
-  def produceProduct()
-
-  def printDetails()
+  def printDetails(): Unit = println(s"Car: $carType, Product: ${product.productName}")
 }
