@@ -3,7 +3,7 @@ package designpatterns.structural.proxy.remoteproxy
 import java.rmi.Naming
 
 object ReportGeneratorClient extends App {
-  // YOUR CODE GOES HERE
+  new ReportGeneratorClient().generateReport()
 }
 
 class ReportGeneratorClient {

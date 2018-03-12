@@ -6,7 +6,7 @@ class ReportGeneratorProtectionProxy(var staff: Staff)
   var reportGenerator: ReportGenerator = ???
 
   override def generateDailyReport(): String =
-    if (staff.isOwner()) {
+    if (staff.isOwner) {
       // YOUR CODE GOES HERE AND REPLACES ""
       ""
     } else {
