@@ -2,10 +2,9 @@ package designpatterns.structural.proxy.protectedproxy
 
 object TestProtectionProxy extends App {
   val owner: Owner = new Owner()
-  val employee: Employee = new Employee()
+  var reportGenerator: ReportGeneratorProxy = new ReportGeneratorProtectionProxy(owner)
   owner.setReportGenerator(reportGenerator)
-  var reportGenerator: ReportGeneratorProxy =
-    new ReportGeneratorProtectionProxy(owner)
+  val employee: Employee = new Employee()
   reportGenerator = new ReportGeneratorProtectionProxy(employee)
   employee.setReportGenerator(reportGenerator)
   println("For owner:")
